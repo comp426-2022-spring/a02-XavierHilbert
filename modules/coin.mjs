@@ -1,7 +1,7 @@
 /** Coin flip functions 
  * This module will emulate a coin flip given various conditions as parameters as defined below
  */
- export {coinFlip, coinFlips, countFlips};
+ export {coinFlip, coinFlips, countFlips, flipACoin};
 /** Simple coin flip
  * 
  * Write a function that accepts no parameters but returns either heads or tails at random.
@@ -87,7 +87,16 @@ return {
  */
 
 function flipACoin(call) {
-
+  let flip = coinFlip()
+  let result = {
+    "call": call,
+    "flip": flip,
+    "result": "lose"
+  }
+  if(flip === call){
+    result.result = "win"
+  }
+  return result
 }
 
 
