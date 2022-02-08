@@ -1,7 +1,7 @@
 /** Coin flip functions 
  * This module will emulate a coin flip given various conditions as parameters as defined below
  */
- export {coinFlip};
+ export {coinFlip, coinFlips, countFlips};
 /** Simple coin flip
  * 
  * Write a function that accepts no parameters but returns either heads or tails at random.
@@ -42,7 +42,11 @@ function coinFlip() {
  */
 
 function coinFlips(flips) {
-
+  let flipsArray = []
+  for(let _ = 0; _ < flips; _++){
+    flipsArray.push(coinFlip())
+  }
+  return flipsArray
 }
 
 /** Count multiple flips
@@ -59,7 +63,16 @@ function coinFlips(flips) {
  */
 
 function countFlips(array) {
-
+let headCount = 0
+for(let flip in array){
+  if(array[flip] == "heads"){
+    headCount +=1
+  }
+}
+return {
+  "heads" : headCount,
+  "tails" : (array.length - headCount)
+}
 }
 
 /** Flip a coin!
