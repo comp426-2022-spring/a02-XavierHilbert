@@ -70,8 +70,8 @@ for(let flip in array){
   }
 }
 return {
-  "heads" : headCount,
-  "tails" : (array.length - headCount)
+  "heads":headCount,
+  "tails":(array.length - headCount)
 }
 }
 
