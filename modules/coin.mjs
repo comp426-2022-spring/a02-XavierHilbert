@@ -69,17 +69,19 @@ for(let flip in array){
     headCount +=1
   }
 }
+
 const data =  {
   "heads":headCount,
   "tails":(array.length - headCount)
 }
-if(data.heads === 0){
-  delete data.heads
+if(headCount === 0 || array.length - headCount ===0){
+  if(data.heads === 0){
+    delete data.heads
+  }
+  if(data.tails === 0){
+    delete data.tails
+  }
 }
-if(data.tails === 0){
-  delete data.tails
-}
-
 return data
 }
 
