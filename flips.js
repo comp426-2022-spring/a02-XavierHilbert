@@ -5,3 +5,6 @@ const numOfRolls = args["number"] || 1
 let flips = coinFlips(numOfRolls)
 console.log(flips)
 console.log(countFlips(flips))
+
+const re = new RegExp("(\\[|\\{)\\s?[\"']?(heads?|tails?)[\"']?\\s?:\\s?[\"']?1[\"']?\\s?(\\]|\\})");
+console.log(re.test(countFlips(flips)))
