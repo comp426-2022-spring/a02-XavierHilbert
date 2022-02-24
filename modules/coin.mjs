@@ -74,6 +74,14 @@ const data =  {
   "heads":headCount,
   "tails":(array.length - headCount)
 }
+if(headCount === 0 || array.length - headCount === 0){
+  if(data.heads === 0){
+    delete data.heads
+  }
+  if(data.tails === 0){
+    delete data.tails
+  }
+}
 return data
 }
 
